@@ -1,0 +1,112 @@
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  @media (min-width: @desktop-width) {
+    display: grid;
+    column-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 50% min-content;
+    justify-items: flex-start;
+    justify-content: space-between;
+    padding-left: 225px;
+    margin-top: 69px;
+  }
+}
+
+.contacts__title {
+  position: relative;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 17px;
+  color: @black;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 46px;
+    font-size: 43px;
+    line-height: 50px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 3px;
+      top: -24px;
+      width: 47px;
+      height: 81px;
+      background: url("../img/flag-contacts.svg");
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+    margin-bottom: 16px;
+    align-self: end;
+    font-size: 53px;
+    line-height: 57px;
+
+    &::before {
+      left: -110px;
+      top: -16px;
+    }
+  }
+}
+
+.contacts__list {
+  box-sizing: border-box;
+  display: grid;
+  row-gap: 30px;
+  column-gap: 30px;
+  margin-bottom: 63px;
+  margin-top: 13px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: max-content 1fr max-content 1fr;
+    column-gap: 0;
+    row-gap: 0;
+    margin-top: 13px;
+    margin-bottom: 50px;
+    font-size: 17px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 20px;
+    align-content: start;
+    row-gap: 31px;
+    column-gap: 20px;
+    grid-template-columns: 20% 80%;
+  }
+}
+
+.contacts__description {
+  margin-left: 0;
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  @media (min-width: @tablet-width) {
+    margin-left: 22px;
+    grid-column-start: auto;
+    grid-column-end: auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-left: 0;
+  }
+}
+
+.contacts__description a {
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: @basic-text;
+  border-bottom: 1px solid @secondary-green;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: @logo-fill-green;
+  }
+}

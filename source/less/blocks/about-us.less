@@ -1,0 +1,144 @@
+.about-us {
+  margin-top: 15px;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 74px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 41px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 227px;
+  }
+}
+
+.about-us__title {
+  margin-top: 25px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: @black;
+
+  @media (min-width: @tablet-width) {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 34px;
+    font-size: 53px;
+    line-height: 57px;
+  }
+}
+
+.about-us__list {
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: @tablet-width) {
+    justify-items: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 34px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: repeat(2, 300px);
+    column-gap: 50px;
+  }
+}
+
+.about-us__item {
+  position: relative;
+  padding-top: 61px;
+  padding-bottom: 22px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 20px;
+  background-repeat: no-repeat;
+  color: @black;
+  list-style-type: none;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 22px;
+    padding-top: 63px;
+    padding-bottom: 48px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+  }
+
+  &--ecology {
+    &::before {
+      width: 33px;
+      height: 38px;
+      top: 8px;
+      left: 8px;
+      background: url("../img/icon-flower.svg");
+    }
+  }
+
+  &--style {
+    @media (min-width: @tablet-width) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row: 2;
+    }
+
+    &::before {
+      width: 47px;
+      height: 27px;
+      top: 8px;
+      left: 0;
+      background: url("../img/icon-money.svg");
+    }
+  }
+
+  &--likes {
+    @media (min-width: @tablet-width) {
+      grid-row: 3;
+    }
+
+    &::before {
+      width: 34px;
+      height: 27px;
+      top: 11px;
+      left: 7px;
+      background: url("../img/icon-heart.svg");
+    }
+  }
+
+  &--handmade {
+    &::before {
+      width: 35px;
+      height: 34px;
+      top: 10px;
+      left: 3px;
+      background: url("../img/icon-clew.svg");
+    }
+  }
+
+  &--support {
+    &::before {
+      width: 55px;
+      height: 23px;
+      top: 9px;
+      left: -6px;
+      background: url("../img/icon-rocket.svg");
+    }
+  }
+
+  &--gift {
+    &::before {
+      width: 33px;
+      height: 32px;
+      top: 10px;
+      left: 3px;
+      background: url("../img/icon-present.svg");
+    }
+  }
+}

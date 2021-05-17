@@ -1,0 +1,157 @@
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 14px 78px;
+  border: 2px solid @basic-text;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  color: @basic-text;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: @white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  @media (min-width: @tablet-width) {
+    padding: 14px 35px;
+  }
+
+  &--contacts {
+    align-self: center;
+
+    @media (min-width: @mobile-width) {
+      padding: 14px 49px;
+      margin-top: 36px;
+    }
+
+    &:hover,
+    &:focus {
+      color: @white;
+      background: @gradient-black-light;
+    }
+
+    &:active {
+      color: fade(@white, 30%);
+    }
+
+    @media (min-width: @tablet-width) {
+      padding: 14px 35px;
+      align-self: center;
+      margin-top: 50px;
+      margin-bottom: 31px;
+    }
+
+    @media (min-width: @desktop-width) {
+      padding: 14px 34px;
+      margin: 0;
+    }
+  }
+
+  &--reviews {
+    &:hover,
+    &:focus {
+      color: @white;
+      background: @gradient-black-light;
+    }
+
+    &:active {
+      color: fade(@white, 30%);
+    }
+
+    @media (min-width: @tablet-width) {
+      position: absolute;
+      top: 80px;
+      right: 52px;
+    }
+
+    @media (min-width: @desktop-width) {
+      right: 48px;
+      top: 85px;
+    }
+  }
+
+  &--form {
+    font-size: 17px;
+    line-height: 16px;
+    color: @white;
+    background: @light-green;
+    border: none;
+    padding: 19px 82px;
+    margin-top: 2px;
+    margin-bottom: 46px;
+
+    @media (min-width: @tablet-width) {
+      padding: 19px 128px;
+    }
+  }
+
+  &--catalog-form {
+    padding: 14px 40px;
+
+    &:hover,
+    &:focus {
+      color: @white;
+      background: @gradient-black-light;
+    }
+
+    &:active {
+      color: fade(@white, 30%);
+    }
+
+    @media (min-width: @tablet-width) {
+      padding: 14px 25px;
+    }
+  }
+
+  &--product {
+    @media (min-width: @tablet-width) {
+      padding: 14px 98px;
+    }
+
+    &:hover,
+    &:focus {
+      color: @white;
+      background: @gradient-black-light;
+    }
+
+    &:active {
+      color: fade(@white, 30%);
+    }
+  }
+
+  &--video {
+    padding: 14px 20px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+
+    &:hover,
+    &:focus {
+      color: @white;
+      background: @gradient-black-light;
+    }
+
+    &:active {
+      color: fade(@white, 30%);
+    }
+
+    @media (min-width: @tablet-width) {
+      margin-bottom: 41px;
+      margin-top: 38px;
+      padding: 14px 215px;
+    }
+
+    @media (min-width: @desktop-width) {
+      margin-top: 23px;
+      margin-right: 54px;
+      padding: 14px 39px;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+  }
+}

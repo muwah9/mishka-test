@@ -1,0 +1,234 @@
+.catalog-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog-card__list {
+  padding: 0;
+  margin-top: 29px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 4px;
+    display: grid;
+    grid-template-columns: repeat(3, 315px);
+    justify-content: space-between;
+    margin-top: 127px;
+  }
+}
+
+.catalog-card__item {
+  display: flex;
+  border: 1px solid @border-grey;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 29px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:last-child {
+    margin-bottom: 15px;
+
+    @media (min-width: @mobile-width) and (max-width: 767px) {
+      .catalog-card__description {
+        margin-top: 24px;
+      }
+
+      .catalog-card__title {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (min-width: @tablet-width) {
+      margin-bottom: 37px;
+    }
+
+    @media (min-width: @desktop-width) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    align-items: start;
+    width: 100%;
+    min-height: 333px;
+    margin-bottom: 52px;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-height: 656px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+.catalog-card__info {
+  width: 203px;
+
+  @media (min-width: @tablet-width) {
+    grid-column-start: 2;
+    grid-column-end: end;
+    grid-row-start: 1;
+    grid-row-end: end;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 83%;
+  }
+}
+
+.catalog-card__description {
+  margin-top: 29px;
+  border-bottom: 1px solid @border-grey;
+
+
+  @media (min-width: @tablet-width) {
+    min-height: 232px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 25px;
+    min-height: 99px;
+  }
+}
+
+.catalog-card__order {
+  display: flex;
+  width: 100%;
+  height: 75px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    height: 72px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0;
+    width: 98%;
+    height: 67px;
+    justify-content: space-between;
+  }
+}
+
+.catalog-card__price {
+  font-weight: 700;
+  font-size: @font-size-base;
+  line-height: 24px;
+  color: @black;
+
+  @media (min-width: @tablet-width) {
+    font-size: 17px;
+  }
+}
+
+.catalog-card__price-link svg {
+  fill-opacity: 20%;
+
+  &:hover,
+  &:focus {
+    fill: @light-green;
+    fill-opacity: 100%;
+  }
+
+  &:active {
+    fill: fade(@light-green, 30%);
+  }
+}
+
+.catalog-card__title {
+  display: block;
+  margin: 0;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  color: @black;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @black-text-hover;
+  }
+
+  &:active {
+    color: @black-text-down;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.catalog-card__text {
+  margin: 0;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 30px;
+  color: @basic-text;
+
+  @media (min-width: @tablet-width) {
+    width: 100%;
+    font-size: @font-size-base;
+  }
+}
+
+.catalog-card__picture {
+  display: flex;
+  height: 195px;
+  background: @mix-white-grey;
+
+  @media (min-width: @tablet-width) {
+    width: 334px;
+    height: 334px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 316px;
+    height: 462px;
+  }
+}

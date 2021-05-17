@@ -1,0 +1,225 @@
+.goods-types {
+  display: flex;
+  position: relative;
+  min-height: 490px;
+  background-color: @background-grey;
+  background-size: 100%;
+
+  @media (min-width: @tablet-width) {
+    min-height: 669px;
+    background-color: @background-grey;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-height: 672px;
+  }
+}
+
+.goods-types__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  background: url("../img/background-home-mobile.png") no-repeat 50% -19%;
+  background-size: image-size("../img/background-home-mobile.png");
+
+  @media (min-resolution: 2dppx), (min-resolution: 144dpi) {
+    background: url("../img/background-home-mobile@2x.png") no-repeat 50% -19%;
+    background-size: image-size("../img/background-home-mobile.png");
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-left: 50px;
+    padding-right: 50px;
+    background: url("../img/background-home-tablet.png") no-repeat 50% 91%;
+    background-size: image-size("../img/background-home-tablet.png");
+
+    @media (min-resolution: 2dppx), (min-resolution: 144dpi) {
+      background: url("../img/background-home-tablet@2x.png") no-repeat 50% 91%;
+      background-size: image-size("../img/background-home-tablet.png");
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      bottom: -15px;
+      left: 0;
+      width: 100%;
+      height: 24px;
+      background: url("../img/zigzag-fill.svg");
+
+      @media (min-width: @desktop-width) {
+        bottom: -19px;
+        left: 14px;
+        height: 34px;
+        background-size: auto 39px;
+      }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    background: url("../img/background-home.png") no-repeat 50% 94%;
+    background-size: image-size("../img/background-home.png");
+
+    @media (min-resolution: 2dppx), (min-resolution: 144dpi) {
+      background: url("../img/background-home@2x.png") no-repeat 50% 94%;
+      background-size: inherit;
+    }
+  }
+}
+
+.goods-types__title {
+  margin: 0;
+  padding: 73px 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 30px;
+  color: @black;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+    padding-top: 84px;
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 90px;
+    font-size: 53px;
+    line-height: 57px;
+  }
+}
+
+.goods-types__list {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.goods-types__item {
+  list-style-type: none;
+  cursor: pointer;
+
+  &--interior {
+    @media (min-width: @tablet-width) {
+      width: 50%;
+    }
+  }
+
+  &--toys {
+    @media (min-width: @tablet-width) {
+      width: 50%;
+    }
+  }
+}
+
+.goods-types__link {
+  position: relative;
+  display: block;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+  color: @white;
+  text-decoration: none;
+  padding: 25px 30px 32px;
+  transition: all 0.25s ease-in-out;
+
+  &--interior {
+    background: @light-green;
+    box-shadow: 0 10px @light-green;
+
+    &:hover,
+    &:focus {
+      background: @background-green;
+      box-shadow: 0 10px @background-green;
+      transform: translateY(-5px);
+
+      &::before {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      background: @background-green;
+
+      &::before {
+        opacity: 0.3;
+      }
+    }
+
+    &::before {
+      content: "";
+      z-index: 5;
+      position: absolute;
+      width: 40px;
+      height: 62px;
+      top: 22px;
+      right: 35px;
+      background: url("../img/interior.svg");
+      opacity: 0.5;
+
+      @media (min-width: @tablet-width) {
+        top: 30px;
+      }
+    }
+  }
+
+  &--toys {
+    background: @special-green;
+    box-shadow: 0 10px @special-green;
+
+    &:hover,
+    &:focus {
+      background: @logo-fill-green;
+      box-shadow: 0 10px @logo-fill-green;
+      transform: translateY(-5px);
+
+      &::before {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      background: @logo-fill-green;
+
+      &::before {
+        opacity: 0.3;
+      }
+    }
+
+    &::before {
+      content: "";
+      z-index: 5;
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 22px;
+      right: 28px;
+      background: url("../img/icon-toy.svg");
+      opacity: 0.5;
+
+      @media (min-width: @tablet-width) {
+        top: 31px;
+        right: 31px;
+      }
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 25px 37px 30px;
+  }
+}

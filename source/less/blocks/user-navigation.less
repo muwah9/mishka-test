@@ -1,0 +1,130 @@
+.user-navigation {
+  position: relative;
+
+  @media (min-width: @mobile-width) {
+    padding: 0;
+  }
+
+  @media (min-width: @tablet-width) {
+    background: white;
+    display: flex;
+    flex-basis: 47%;
+    justify-content: flex-end;
+    padding-right: 47px;
+    flex-direction: row;
+    border-bottom: 1px solid #ececec;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-left: 4px;
+    order: 2;
+    flex-basis: 37%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 476px;
+      width: calc(50vw - 575px);
+      height: 100%;
+      background-color: #ffffff;
+    }
+  }
+}
+
+.user-navigation__item {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  border-bottom: 1px solid @border-grey;
+
+  @media (min-width: @tablet-width) {
+    padding-left: 82px;
+    border-left: 1px solid @border-grey;
+    border-bottom: none;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .user-navigation__text {
+    display: none;
+  }
+}
+
+.user-navigation__search {
+  position: absolute;
+  top: 31px;
+  left: -44px;
+  fill-opacity: 20%;
+
+  @media (min-width: @tablet-width) {
+    top: -7px;
+    left: -47px;
+  }
+
+  @media (min-width: @desktop-width) {
+    left: -49px;
+  }
+}
+
+.user-navigation__basket {
+  position: absolute;
+  top: 30px;
+  left: -31px;
+  fill-opacity: 20%;
+
+
+  @media (min-width: @tablet-width) {
+    top: 28px;
+    left: -50px;
+  }
+}
+
+.user-navigation__link {
+  position: relative;
+  padding: 28px 29px 26px 0;
+  transition: all 0.3s ease-in-out;
+
+  &--basket {
+    padding: 28px 0 26px 16px;
+
+    &:hover,
+    &:focus,
+    &:hover > .user-navigation__basket,
+    &:focus > .user-navigation__basket {
+      color: @black-text-hover;
+      fill: @light-green;
+      fill-opacity: 100%;
+    }
+
+    &:active,
+    &:active > .user-navigation__basket {
+      color: @black-text-down;
+      fill-opacity: 30%;
+    }
+
+    @media (min-width: @tablet-width) {
+      padding: 27px 0 21px 0;
+    }
+  }
+
+  &--search {
+    &:hover > .user-navigation__search,
+    &:focus > .user-navigation__search {
+      fill: @light-green;
+      fill-opacity: 100%;
+    }
+
+    &:active > .user-navigation__search {
+      fill: fade(@light-green, 30%);
+      fill-opacity: 30%;
+    }
+
+    @media (min-width: @tablet-width) {
+      padding: 0;
+    }
+  }
+}

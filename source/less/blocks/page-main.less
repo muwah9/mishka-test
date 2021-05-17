@@ -1,0 +1,55 @@
+.page-main__header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 177px;
+  justify-content: center;
+  background: @background-grey;
+
+  @media (min-width: @tablet-width) {
+    min-height: 151px;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-height: 186px;
+  }
+
+  &::before {
+    @media (min-width: @tablet-width) {
+      content: "";
+      position: absolute;
+      bottom: -17px;
+      left: 0;
+      width: 100%;
+      height: 24px;
+      background: url("../img/zigzag-fill.svg");
+    }
+
+    @media (min-width: @desktop-width) {
+      bottom: -15px;
+      height: 34px;
+      background: url("../img/zigzag-page-header-desktope.svg");
+    }
+  }
+}
+
+.page-main__title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 30px;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 64px;
+    font-size: 53px;
+    line-height: 57px;
+  }
+}

@@ -1,0 +1,246 @@
+.reviews {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (min-width: @tablet-width) {
+    display: block;
+    padding-bottom: 67px;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 79px;
+    padding-left: 225px;
+  }
+
+  &::after {
+    z-index: -1;
+
+    @media (min-width: @tablet-width) {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 457px;
+      top: 0;
+      left: 0;
+      background-color: @mix-white-grey;
+      background-image: url("../img/background-reviews.png");
+      background-size: image-size("../img/background-reviews.png");
+
+      @media (min-resolution: 2dppx), (min-resolution: 144dpi) {
+        background-image: url("../img/background-reviews@2x.png");
+        background-size: image-size("../img/background-reviews.png");
+      }
+    }
+
+    @media (min-width: @desktop-width) {
+      left: 52px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -51px;
+    width: 100%;
+    height: 6px;
+    background: url("../img/zigzag-line-mobile-fill.svg");
+
+    @media (min-width: @tablet-width) {
+      height: 17px;
+      background: url("../img/zigzag-line.svg");
+    }
+
+    @media (min-width: @desktop-width) {
+      bottom: -90px;
+      left: 50px;
+      width: 91%;
+      height: 23px;
+      background: url("../img/zigzag-line-desktop.svg");
+    }
+  }
+}
+
+.reviews__title {
+  margin-top: 37px;
+  margin-bottom: 9px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: @black;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+    margin-bottom: 38px;
+    padding-top: 83px;
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 53px;
+    line-height: 57px;
+    margin-bottom: 36px;
+  }
+}
+
+.reviews__list {
+  padding: 0;
+  margin-top: 7px;
+  list-style-type: none;
+}
+
+.reviews__text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 30px;
+
+  @media (min-width: @tablet-width) {
+    br {
+      display: none;
+    }
+    font-size: 17px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 93%;
+  }
+}
+
+.reviews__author {
+  margin-top: 35px;
+  margin-bottom: 3px;
+  color: @black;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 18px;
+    padding-top: 64px;
+    margin: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 42px;
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+.reviews__social-name {
+  margin: 0;
+  color: @basic-text;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 30px;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 5px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0;
+  }
+}
+
+.reviews__item:nth-child(2),
+.reviews__item:nth-child(3) {
+  display: none;
+}
+
+.reviews__controls {
+  display: flex;
+  justify-content: center;
+  margin: 14px auto 38px;
+  width: 100%;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+    margin-left: auto;
+    margin-right: 0;
+    width: 175px;
+    position: absolute;
+    right: 50px;
+    bottom: 83px;
+  }
+
+  @media (min-width: @desktop-width) {
+    right: 48px;
+    bottom: 94px;
+  }
+}
+
+.reviews__button {
+  background: none;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  width: 50%;
+  height: 52px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid @border-grey;
+
+  @media (min-width: @tablet-width) {
+    border: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 26px;
+    transform: translate(-50%, -50%);
+  }
+
+  &--previous {
+    &:hover,
+    &:focus {
+      opacity: 60%;
+    }
+
+    &:active {
+      opacity: 30%;
+    }
+
+    &::before {
+      background: url("../img/arrow-left.svg");
+
+      &:hover,
+      &:focus {
+        opacity: 60%;
+      }
+
+      &:active {
+        opacity: 30%;
+        outline: none;
+      }
+    }
+  }
+
+  &--next {
+    border-width: 1px 1px 1px 0;
+
+    &:hover,
+    &:focus {
+      opacity: 60%;
+    }
+
+    &:active {
+      opacity: 30%;
+      outline: none;
+    }
+
+    &::before {
+      background: url("../img/arrow-right.svg");
+    }
+  }
+}

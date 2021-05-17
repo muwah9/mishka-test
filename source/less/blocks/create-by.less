@@ -1,0 +1,47 @@
+.create-by {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    justify-content: flex-start;
+  }
+}
+
+.create-by__link {
+  position: relative;
+  margin-top: 10px;
+  width: 181px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 18px;
+  color: @black;
+  text-decoration: none;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 3px;
+  }
+
+  &:hover > .create-by__image,
+  &:focus > .create-by__image {
+    fill: @logo-fill-green;
+  }
+
+  &:active > .create-by__image {
+    fill: fade(@logo-fill-green, 30%);
+  }
+}
+
+.create-by__image {
+  position: absolute;
+  top: -9px;
+  right: 0;
+
+  @media (min-width: @tablet-width) {
+    right: -1px;
+    top: -6px;
+  }
+}
