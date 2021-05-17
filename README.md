@@ -1,2 +1,0 @@
-# mishka-test
-Test Project
