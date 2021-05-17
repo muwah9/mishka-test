@@ -38,7 +38,7 @@ exports.styles = styles;
 const html = () => {
   return gulp.src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("/"));
+    .pipe(gulp.dest("."));
 }
 
 // Scripts
@@ -108,7 +108,7 @@ const copy = (done) => {
   ], {
     base: "source"
   })
-    .pipe(gulp.dest("/"))
+    .pipe(gulp.dest("."))
   done();
 }
 
@@ -125,7 +125,7 @@ const clean = () => {
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: "/"
+      baseDir: "./"
     },
     cors: true,
     notify: false,
